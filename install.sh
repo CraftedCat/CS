@@ -2,7 +2,7 @@
 export CURRENT_DIR=$PWD
 export DIR="/opt"
 export PROJECT="cs"
-DEB_PACKAGE_NAME=""wget git unzip"
+DEB_PACKAGE_NAME="wget git unzip"
 YUM_PACKAGE_NAME="wget git unzip"
 BOLD='\033[1m'       #  ${BOLD}
 LGREEN='\033[1;32m'     #  ${LGREEN}
