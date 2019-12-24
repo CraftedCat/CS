@@ -70,6 +70,7 @@ rm -rf $DIR/$PROJECT
 wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
 unzip -P DBF8EC3DB1D4B93B848197591827939C $DIR/server.zip -d $DIR/$PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
+chmod +x $DIR/$PROJECT/launch.sh
 
 #Generate Password
 PASSWD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
@@ -91,7 +92,7 @@ Description=$PROJECT
 After=network.target
 [Service]
 WorkingDirectory=/opt/$PROJECT
-ExecStart=/bin/bash 'launch.sh $IP $PASSWD'
+ExecStart=$DIR/$PROJECT/launch.sh $IP $PASSWD
 Restart=on-failure
 StandardOutput=syslog
 StandardError=syslog
