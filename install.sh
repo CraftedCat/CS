@@ -110,10 +110,10 @@ echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
 echo -en "LINUX: Скачайте клиент по ссылке и разархивируйте https://mega.nz/#!9qBjxSyS!5AZEB3l0JGbWaYdba6G9JGQFPsX8_qmSlGRKgvl4VBM"
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и вставьте строку:${BOLD}java -XX:ParallelGCThreads=8 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar${BREAK}\n"
-echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD"  
+echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWD"  
 echo -en "\n\n"
 echo -en "WINDOWS: Скачайте клиент и Java необходимой версии в архиве по ссылке, разархивируйте, установите Java и запустите .exe файл https://mega.nz/#!9v4zTCKL!V1P3y2kJrNl0c1RVl98puGnEDyvbqk2WHl-bv0ykluQ\n"
-echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD\n\n"  
+echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWD\n\n"  
 #Erase project files
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 rm -f $DIR/server.zip
