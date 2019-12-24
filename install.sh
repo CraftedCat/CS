@@ -61,6 +61,8 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     exit 1;
  fi
 
+clear
+
 echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
