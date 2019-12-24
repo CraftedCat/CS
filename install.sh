@@ -91,7 +91,7 @@ Description=$PROJECT
 After=network.target
 [Service]
 WorkingDirectory=/opt/$PROJECT
-ExecStart=/opt/$PROJECT/launch.sh $IP $PASSWD
+ExecStart=/bin/bash 'launch.sh $IP $PASSWD'
 Restart=on-failure
 StandardOutput=syslog
 StandardError=syslog
