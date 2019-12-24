@@ -102,13 +102,13 @@ OOMScoreAdjust=-100
 WantedBy=multi-user.target" > /etc/systemd/system/$PROJECT.service
 systemctl daemon-reload
 systemctl enable $PROJECT
-systemctl start $PROJECT
+systemctl restart $PROJECT
 
 clear
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
-echo -en "LINUX: Скачайте клиент по ссылке, разархивируйте https://mega.nz/#!9qBjxSyS!5AZEB3l0JGbWaYdba6G9JGQFPsX8_qmSlGRKgvl4VBM"
+echo -en "LINUX: Скачайте клиент по ссылке и разархивируйте https://mega.nz/#!9qBjxSyS!5AZEB3l0JGbWaYdba6G9JGQFPsX8_qmSlGRKgvl4VBM"
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и вставьте строку:${BOLD}java -XX:ParallelGCThreads=8 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar${BREAK}\n"
 echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD"  
 echo -en "\n\n"
