@@ -67,7 +67,7 @@ echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
 #CS
-wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
+wget --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
 unzip -P DBF8EC3DB1D4B93B848197591827939C $DIR/server.zip -d $DIR/PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
@@ -104,7 +104,7 @@ systemctl daemon-reload
 systemctl enable $PROJECT
 systemctl restart $PROJECT
 
-clear
+#clear
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
