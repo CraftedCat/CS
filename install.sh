@@ -2,8 +2,8 @@
 export CURRENT_DIR=$PWD
 export DIR="/opt"
 export PROJECT="cs"
-DEB_PACKAGE_NAME="wget git unzip"
-YUM_PACKAGE_NAME="wget git unzip"
+DEB_PACKAGE_NAME="wget unzip"
+YUM_PACKAGE_NAME="wget unzip"
 BOLD='\033[1m'       #  ${BOLD}
 LGREEN='\033[1;32m'     #  ${LGREEN}
 LBLUE='\033[1;34m'     #  ${LBLUE}
@@ -61,12 +61,11 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     exit 1;
  fi
 
-
-echo -en "\n${BOLD} Script install required packages${BREAK}\n\n"
-cd $DIR && rm -rf $PROJECT
+echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
+rm -rf $DIR/$PROJECT
 
 #CS
-wget https://fs01n1.sendspace.com/dl/737d05da507f07bc5a3df332e8362007/5e021c4c4b64bfc1/w7hsep/server.zip
+wget --quiet --directory-prefix=$DIR/$PROJECT --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
 unzip -P DBF8EC3DB1D4B93B848197591827939C server.zip -d $DIR/PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
