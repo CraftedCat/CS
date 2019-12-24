@@ -68,7 +68,7 @@ rm -rf $DIR/$PROJECT
 
 #CS
 wget --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
-unzip -P DBF8EC3DB1D4B93B848197591827939C $DIR/server.zip -d $DIR/PROJECT
+unzip -P DBF8EC3DB1D4B93B848197591827939C $DIR/server.zip -d $DIR/$PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
 #Generate Password
