@@ -66,9 +66,9 @@ echo -en "\n${BOLD} Script install required packages${BREAK}\n\n"
 cd $DIR && rm -rf $PROJECT
 
 #CS
-wget https://fs01n1.sendspace.com/dl/435b58cf1ce3d42d574ce8363504bb5c/5e02151f00aa4629/gcbnty/server.zip
-unzip -P DBF8EC3DB1D4B93B848197591827939C server.zip -d $DIR && cd $DIR/$PROJECT
-rpm -i rpm -i jre-8u121-linux-x64.rpm
+wget https://fs01n1.sendspace.com/dl/737d05da507f07bc5a3df332e8362007/5e021c4c4b64bfc1/w7hsep/server.zip
+unzip -P DBF8EC3DB1D4B93B848197591827939C server.zip -d $DIR
+rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
 #Generate Password
 PASSWD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
@@ -113,6 +113,7 @@ echo -en "В появившемся окне укажите HOST: $IP, PORT: 500
 echo -en "\n\n"
 echo -en "WINDOWS: Скачайте клиент и Java необходимой версии в архиве по ссылке, разархивируйте, установите Java и запустите .exe файл https://mega.nz/#!9v4zTCKL!V1P3y2kJrNl0c1RVl98puGnEDyvbqk2WHl-bv0ykluQ\n"
 echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD"  
-rm -f $CURRENT_DIR/install.sh
+rm -f install.sh
+rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
 
