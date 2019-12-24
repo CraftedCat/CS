@@ -61,13 +61,13 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     exit 1;
  fi
 
- clear
+
 echo -en "\n${BOLD} Script install required packages${BREAK}\n\n"
 cd $DIR && rm -rf $PROJECT
 
 #CS
 wget https://fs01n1.sendspace.com/dl/737d05da507f07bc5a3df332e8362007/5e021c4c4b64bfc1/w7hsep/server.zip
-unzip -P DBF8EC3DB1D4B93B848197591827939C server.zip -d $DIR
+unzip -P DBF8EC3DB1D4B93B848197591827939C server.zip -d $DIR/PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
 #Generate Password
@@ -112,7 +112,7 @@ echo -en "Откройте терминал, перейдите в папку к
 echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD"  
 echo -en "\n\n"
 echo -en "WINDOWS: Скачайте клиент и Java необходимой версии в архиве по ссылке, разархивируйте, установите Java и запустите .exe файл https://mega.nz/#!9v4zTCKL!V1P3y2kJrNl0c1RVl98puGnEDyvbqk2WHl-bv0ykluQ\n"
-echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD"  
+echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD\n\n"  
 rm -f install.sh
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
