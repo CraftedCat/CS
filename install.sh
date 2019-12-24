@@ -65,7 +65,7 @@ echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
 #CS
-wget --quiet --directory-prefix=$DIR/$PROJECT --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
+wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
 unzip -P DBF8EC3DB1D4B93B848197591827939C server.zip -d $DIR/PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 
@@ -112,7 +112,9 @@ echo -en "В появившемся окне укажите HOST: $IP, PORT: 500
 echo -en "\n\n"
 echo -en "WINDOWS: Скачайте клиент и Java необходимой версии в архиве по ссылке, разархивируйте, установите Java и запустите .exe файл https://mega.nz/#!9v4zTCKL!V1P3y2kJrNl0c1RVl98puGnEDyvbqk2WHl-bv0ykluQ\n"
 echo -en "В появившемся окне укажите HOST: $IP, PORT: 50050, USER: любой ник и Pasword: $PASSWORD\n\n"  
-rm -f install.sh
+#Erase project files
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
-
+rm -f $DIR/server.zip
+#erase install script
+rm -f $CURRENT_DIR/install.sh
 
