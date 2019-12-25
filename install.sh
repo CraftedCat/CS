@@ -1,5 +1,12 @@
 #!/bin/bash
-echo -en "${BOLD}Centos 7 only${BREAK}" 
+echo -en "${BOLD}Centos 7 only${BREAK}"
+if [ -n "$1" ]
+then
+    UNIQ=$1
+else
+    echo -en "Укажите ${LGREEN}пароль${BREAK}:" 
+    read UNIQ
+fi
 export CURRENT_DIR=$PWD
 export DIR="/opt"
 export PROJECT="cs"
@@ -68,8 +75,8 @@ echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
 #CS
-wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=DBF8EC3DB1D4B93B848197591827939C ftp://sip.mybot.work:21/server.zip
-unzip -P DBF8EC3DB1D4B93B848197591827939C $DIR/server.zip -d $DIR/$PROJECT
+wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=UNIQ ftp://sip.mybot.work:21/server.zip
+unzip -P UNIQ $DIR/server.zip -d $DIR/$PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 chmod +x $DIR/$PROJECT/launch.sh
 
