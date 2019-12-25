@@ -1,5 +1,7 @@
 #!/bin/bash
-echo -en "${BOLD}Centos 7 only${BREAK}"
+echo "==============================================="
+echo -en "${LGREEN}Centos 7 only${BREAK}\n"
+echo "==============================================="
 if [ -n "$1" ]
 then
     UNIQ=$1
