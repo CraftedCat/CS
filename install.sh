@@ -79,7 +79,7 @@ rm -rf $DIR/$PROJECT
 #CS
 wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=$UNIQ ftp://sip.mybot.work:21/server.zip
 # wget --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=$UNIQ ftp://sip.mybot.work:21/server.zip
-unzip -P UNIQ $DIR/server.zip -d $DIR/$PROJECT
+unzip -P $UNIQ $DIR/server.zip -d $DIR/$PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 chmod +x $DIR/$PROJECT/launch.sh
 
