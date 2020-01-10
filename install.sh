@@ -116,7 +116,7 @@ systemctl daemon-reload
 systemctl enable $PROJECT
 systemctl restart $PROJECT
 
-clear
+# clear
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
@@ -129,7 +129,7 @@ echo -en "https://mega.nz/#!9v4zTCKL!V1P3y2kJrNl0c1RVl98puGnEDyvbqk2WHl-bv0ykluQ
 echo -en "В появившемся окне клиента укажите HOST: ${BOLD}$IP${BREAK}, PORT: ${BOLD}50050${BREAK}, USER: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
 #Erase project files
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
-rm -f $DIR/server.zip
+# rm -f $DIR/server.zip
 #erase install script
 rm -f $CURRENT_DIR/install.sh
 
