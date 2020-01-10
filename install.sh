@@ -71,7 +71,7 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     exit 1;
  fi
 
-clear
+# clear
 
 echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
@@ -115,7 +115,7 @@ systemctl daemon-reload
 systemctl enable $PROJECT
 systemctl restart $PROJECT
 
-clear
+# clear
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
