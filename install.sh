@@ -71,14 +71,14 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     exit 1;
  fi
 
-# clear
+clear
 
 echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
 #CS
-# wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=UNIQ ftp://sip.mybot.work:21/server.zip
- wget --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=UNIQ ftp://sip.mybot.work:21/server.zip
+wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=$UNIQ ftp://sip.mybot.work:21/server.zip
+# wget --directory-prefix=$DIR/ --no-cache --ftp-user=cs --ftp-password=$UNIQ ftp://sip.mybot.work:21/server.zip
 unzip -P UNIQ $DIR/server.zip -d $DIR/$PROJECT
 rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 chmod +x $DIR/$PROJECT/launch.sh
@@ -116,14 +116,14 @@ systemctl daemon-reload
 systemctl enable $PROJECT
 systemctl restart $PROJECT
 
-# clear
+clear
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
 echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке и разархивируйте https://mega.nz/#!9qBjxSyS!5AZEB3l0JGbWaYdba6G9JGQFPsX8_qmSlGRKgvl4VBM\n\n"
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и запустите строку:\n"
 echo -en "${BOLD}java -XX:ParallelGCThreads=8 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar${BREAK}\n"
-echo -en "В появившемся окне клиента укажите HOST: ${BOLD}$IP${BREAK}, PORT: ${BOLD}50050${BREAK}, USER: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\nn"  
+echo -en "В появившемся окне клиента укажите HOST: ${BOLD}$IP${BREAK}, PORT: ${BOLD}50050${BREAK}, USER: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n"  
 echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте клиент и Java необходимой версии в архиве по ссылке, разархивируйте, установите Java и запустите .exe файл\n"
 echo -en "https://mega.nz/#!9v4zTCKL!V1P3y2kJrNl0c1RVl98puGnEDyvbqk2WHl-bv0ykluQ\n"
 echo -en "В появившемся окне клиента укажите HOST: ${BOLD}$IP${BREAK}, PORT: ${BOLD}50050${BREAK}, USER: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
