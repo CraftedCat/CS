@@ -83,7 +83,7 @@ clear
 echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
-#CS
+# CS
 wget --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://sip.mybot.work:21/server4.zip
 unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
@@ -96,7 +96,7 @@ if [[ "${OS}" == "CentOS" ]]; then
     # update-java-alternatives -s java-1.11.0-openjdk-amd64
 fi
 
-#Generate Password
+# Generate Password
 PASSWD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
 
 #Obtain IP
@@ -129,7 +129,7 @@ systemctl daemon-reload
 systemctl enable $PROJECT
 systemctl restart $PROJECT
 
-# clear
+# Clear
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
@@ -140,11 +140,11 @@ echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте, установите Java (
 echo -en "https://mega.nz/#!xnRlhagL!PqzVMj7vYPR_naoFHzs6EaPVoJ0aEKPB54XmkJy660o\n"
 echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
 
-#Erase project files
+# Erase project files
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 rm -f $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz
 # rm -f $DIR/server4.zip
 
-#Erase install script
+# Erase install script
 rm -f $CURRENT_DIR/install4.sh
 
