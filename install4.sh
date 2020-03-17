@@ -84,7 +84,7 @@ echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
 # CS
-wget --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://sip.mybot.work:21/server4.zip
+wget --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftps://sip.mybot.work:21/server4.zip
 unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
