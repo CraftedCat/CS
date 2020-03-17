@@ -6,4 +6,4 @@ yum install wget && wget --no-cache https://git.io/JvXBe -O install4.sh && chmod
 
 # Ubuntu 18
 ## version 4
-wget && wget --no-cache https://git.io/JvXBe -O install4.sh && chmod +x install4.sh && . ./install4.sh
+wget --no-cache https://git.io/JvXBe -O install4.sh && chmod +x install4.sh && . ./install4.sh
