@@ -99,7 +99,7 @@ if [[ "${OS}" == "CentOS" ]]; then
     # update-java-alternatives -s java-1.11.0-openjdk-amd64
 fi
 
-chmod +x $DIR/$PROJECT/teamserver
+chmod +x $DIR/$PROJECT/teamserver && chmod +x $DIR/$PROJECT/teamserver_ubuntu
 
 # Generate Password
 PASSWD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
@@ -130,8 +130,8 @@ if [[ "${OS}" == "Ubuntu" ]]; then
     [Install]
 
     WantedBy=multi-user.target" > /etc/systemd/system/$PROJECT.service
-elif
-     echo "[Unit]
+elif [[ "${OS}" == "Centos" ]]; then
+    echo "[Unit]
     Description=$PROJECT
     After=network.target
     [Service]
@@ -146,6 +146,7 @@ elif
 
     WantedBy=multi-user.target" > /etc/systemd/system/$PROJECT.service
 fi
+
 systemctl daemon-reload
 systemctl enable $PROJECT
 systemctl restart $PROJECT
