@@ -12,8 +12,8 @@ fi
 export CURRENT_DIR=$PWD
 export DIR="/opt"
 export PROJECT="cs"
-DEB_PACKAGE_NAME="wget unzip software-properties-common"
-YUM_PACKAGE_NAME="wget unzip"
+DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full"
+YUM_PACKAGE_NAME="wget unzip p7zip-full"
 BOLD='\033[1m'       #  ${BOLD}
 LGREEN='\033[1;32m'     #  ${LGREEN}
 LBLUE='\033[1;34m'     #  ${LBLUE}
@@ -85,7 +85,8 @@ rm -rf $DIR/$PROJECT
 
 # CS
 wget --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftps://sip.mybot.work:21/server4.zip
-unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
+# unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
+7z x -p$UNIQ $DIR/server4.zip -o$DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
   elif [[ "${OS}" == "Ubuntu" ]]; then
