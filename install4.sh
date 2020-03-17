@@ -121,7 +121,7 @@ if [[ "${OS}" == "Ubuntu" ]]; then
     After=network.target
     [Service]
     WorkingDirectory=/opt/$PROJECT
-    ExecStart=$DIR/$PROJECT/teamserver $IP $PASSWD
+    ExecStart=$DIR/$PROJECT/teamserver_ubuntu $IP $PASSWD
     Restart=on-failure
     StandardOutput=syslog
     StandardError=syslog
