@@ -87,7 +87,7 @@ rm -rf $DIR/$PROJECT
 rm -d -r $DIR/$PROJECT &>/dev/null
 wget --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftps://sip.mybot.work:21/server4.zip
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
-7z x -p$UNIQ $DIR/server4.zip -o$DIR/$PROJECT
+7z e -p$UNIQ $DIR/server4.zip -o$DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
   elif [[ "${OS}" == "Ubuntu" ]]; then
