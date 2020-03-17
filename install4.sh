@@ -115,21 +115,37 @@ fi
 if [[ "${IP}" = "" ]]; then
     IP=$(wget --timeout=1 --tries=1 -qO- ident.me)
 fi
+if [[ "${OS}" == "Ubuntu" ]]; then
+    echo "[Unit]
+    Description=$PROJECT
+    After=network.target
+    [Service]
+    WorkingDirectory=/opt/$PROJECT
+    ExecStart=$DIR/$PROJECT/teamserver $IP $PASSWD
+    Restart=on-failure
+    StandardOutput=syslog
+    StandardError=syslog
+    SyslogIdentifier=$PROJECT
+    OOMScoreAdjust=-100
+    [Install]
 
-echo "[Unit]
-Description=$PROJECT
-After=network.target
-[Service]
-WorkingDirectory=/opt/$PROJECT
-ExecStart=$DIR/$PROJECT/teamserver $IP $PASSWD
-Restart=on-failure
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=$PROJECT
-OOMScoreAdjust=-100
-[Install]
+    WantedBy=multi-user.target" > /etc/systemd/system/$PROJECT.service
+elif
+     echo "[Unit]
+    Description=$PROJECT
+    After=network.target
+    [Service]
+    WorkingDirectory=/opt/$PROJECT
+    ExecStart=$DIR/$PROJECT/teamserver $IP $PASSWD
+    Restart=on-failure
+    StandardOutput=syslog
+    StandardError=syslog
+    SyslogIdentifier=$PROJECT
+    OOMScoreAdjust=-100
+    [Install]
 
-WantedBy=multi-user.target" > /etc/systemd/system/$PROJECT.service
+    WantedBy=multi-user.target" > /etc/systemd/system/$PROJECT.service
+fi
 systemctl daemon-reload
 systemctl enable $PROJECT
 systemctl restart $PROJECT
