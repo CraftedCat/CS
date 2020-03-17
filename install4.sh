@@ -91,7 +91,7 @@ wget --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJ
 if [[ "${OS}" == "CentOS" ]]; then
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
   elif [[ "${OS}" == "Ubuntu" ]]; then
-    mkdir /usr/lib/jvm && tar -zxvf jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
+    mkdir /usr/lib/jvm && tar -zxvf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
     update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 3
     update-alternatives --config java
     # add-apt-repository ppa:openjdk-r/ppa && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
