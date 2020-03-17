@@ -85,14 +85,14 @@ rm -rf $DIR/$PROJECT
 
 # CS
 rm -d -r $DIR/$PROJECT &>/dev/null
-wget --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftps://sip.mybot.work:21/server4.zip
+wget --quiet --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftps://sip.mybot.work:21/server4.zip
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 7z e -p$UNIQ $DIR/server4.zip -o$DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
   elif [[ "${OS}" == "Ubuntu" ]]; then
     mkdir /usr/lib/jvm &>/dev/null
-    tar -zxvf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
+    tar -xf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
     update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 3
     update-alternatives --config java
     # add-apt-repository ppa:openjdk-r/ppa && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
