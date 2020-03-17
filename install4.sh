@@ -84,7 +84,7 @@ echo -en "\n${BOLD} Script installed required packages${BREAK}\n\n"
 rm -rf $DIR/$PROJECT
 
 #CS
-wget --quiet --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://sip.mybot.work:21/server4.zip
+wget --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://sip.mybot.work:21/server4.zip
 unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
@@ -133,9 +133,9 @@ systemctl restart $PROJECT
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
-echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке https://mega.nz/#!8mYR3ABa!8u6-QpJxARxOKVvwhHnepUYnaVGV8mt3UHjVcMpounU\n\n"
+echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке https://mega.nz/#!8mYR3ABa!8u6-QpJxARxOKVvwhHnepUYnaVGV8mt3UHjVcMpounU\n"
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и запустите строку: ./cobaltstrike\n"
-echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n"  
+echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n\n"  
 echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте, установите Java (jre-*) и запустите cobaltstrike.bat файл\n"
 echo -en "https://mega.nz/#!xnRlhagL!PqzVMj7vYPR_naoFHzs6EaPVoJ0aEKPB54XmkJy660o\n"
 echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
