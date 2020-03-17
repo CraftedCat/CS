@@ -145,7 +145,7 @@ echo -en "В появившемся окне клиента укажите Host:
 # Erase project files
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 rm -f $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz
-# rm -f $DIR/server4.zip
+rm -f $DIR/server4.zip
 
 # Erase install script
 rm -f $CURRENT_DIR/install4.sh
