@@ -99,6 +99,8 @@ if [[ "${OS}" == "CentOS" ]]; then
     # update-java-alternatives -s java-1.11.0-openjdk-amd64
 fi
 
+chmod +x $DIR/$PROJECT/teamserver
+
 # Generate Password
 PASSWD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
 
