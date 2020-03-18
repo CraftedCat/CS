@@ -130,7 +130,7 @@ if [[ "${OS}" == "Ubuntu" ]]; then
     [Install]
 
     WantedBy=multi-user.target" > /etc/systemd/system/$PROJECT.service
-elif [[ "${OS}" == "Centos" ]]; then
+elif [[ "${OS}" == "CentOS" ]]; then
     echo "[Unit]
     Description=$PROJECT
     After=network.target
