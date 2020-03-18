@@ -39,12 +39,6 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     echo "================================================"
     yum install -y $YUM_PACKAGE_NAME
     OS="Fedora"
- elif cat /etc/*release | grep ^CentOS; then
-    echo "================================================"
-    echo "Installing packages $YUM_PACKAGE_NAME on Fedora"
-    echo "================================================"
-    OS="CentOS6"
-    yum install -y $YUM_PACKAGE_NAME
  elif cat /etc/*release | grep ^NAME | grep Ubuntu; then
     echo "==============================================="
     echo "Installing packages $DEB_PACKAGE_NAME on Ubuntu"
