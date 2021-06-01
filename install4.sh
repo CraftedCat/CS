@@ -12,7 +12,7 @@ fi
 export CURRENT_DIR=$PWD
 export DIR="/opt"
 export PROJECT="cs"
-DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full"
+DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full megatools"
 YUM_PACKAGE_NAME="wget unzip p7zip"
 BOLD='\033[1m'       #  ${BOLD}
 LGREEN='\033[1;32m'     #  ${LGREEN}
