@@ -12,7 +12,7 @@ fi
 export CURRENT_DIR=$PWD
 export DIR="/opt"
 export PROJECT="cs"
-DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full megatools"
+DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full megacmd"
 YUM_PACKAGE_NAME="wget unzip p7zip"
 BOLD='\033[1m'       #  ${BOLD}
 LGREEN='\033[1;32m'     #  ${LGREEN}
@@ -79,13 +79,18 @@ rm -rf $DIR/$PROJECT
 
 # CS
 rm -d -r $DIR/$PROJECT &>/dev/null
-wget --quiet --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://sip.mybot.work:21/server4.zip
+# FTP 
+#wget --quiet --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://sip.mybot.work:21/server4.zip
+
+#Mega.nz
+mega-get https://mega.nz/file/R253lYwC#SvrxPnZDMIuUjSjVNPaG86_TENrhGeqAyC0pMwEJ0mQ
+
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
-    7za e -p$UNIQ $DIR/server4.zip -o$DIR/$PROJECT
+    7za e -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 elif [[ "${OS}" == "Ubuntu" ]]; then
-    7z e -p$UNIQ $DIR/server4.zip -o$DIR/$PROJECT
+    7z e -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
     mkdir /usr/lib/jvm &>/dev/null
     tar -xf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
     update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 3
@@ -163,7 +168,7 @@ echo -en "В появившемся окне клиента укажите Host:
 # Erase project files
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 rm -f $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz
-rm -f $DIR/server4.zip
+rm -f $DIR/server4.3.7z
 
 # Erase install script
 rm -f $CURRENT_DIR/install4.sh
