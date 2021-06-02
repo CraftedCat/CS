@@ -91,10 +91,10 @@ mega-get https://mega.nz/file/AItBzISJ#NFs1CZZne4kAGl89dEBemHAHPFbY7p3DjwQwdrxEi
 
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
-    7za e -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
+    7za x -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 elif [[ "${OS}" == "Ubuntu" ]]; then
-    7z e -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
+    7z x -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
     mkdir /usr/lib/jvm &>/dev/null
     tar -xf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
     update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 3
