@@ -46,7 +46,7 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     echo "==============================================="
     apt-get update
     apt-get install -y $DEB_PACKAGE_NAME
-    wget $DEB_MEGA_CMD
+    wget https://mega.nz/linux/MEGAsync/xUbuntu_18.04/amd64/$DEB_MEGA_CMD
     dpkg -i $DEB_MEGA_CMD
     apt --fix-broken install
     OS="Ubuntu"
