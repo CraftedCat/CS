@@ -80,10 +80,10 @@ rm -rf $DIR/$PROJECT
 # CS
 rm -d -r $DIR/$PROJECT &>/dev/null
 # FTP 
-#wget --quiet --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://sip.mybot.work:21/server4.zip
+#wget --quiet --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://ftp.domain.com:21/server4.3.7z
 
 #Mega.nz
-mega-get https://mega.nz/file/R253lYwC#SvrxPnZDMIuUjSjVNPaG86_TENrhGeqAyC0pMwEJ0mQ
+mega-get https://mega.nz/file/AItBzISJ#NFs1CZZne4kAGl89dEBemHAHPFbY7p3DjwQwdrxEiKk
 
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
