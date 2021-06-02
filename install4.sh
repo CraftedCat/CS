@@ -12,7 +12,8 @@ fi
 export CURRENT_DIR=$PWD
 export DIR="/opt"
 export PROJECT="cs"
-DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full megacmd"
+DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full"
+DEB_MEGA_CMD="megacmd_1.4.0-6.1_amd64.deb"
 YUM_PACKAGE_NAME="wget unzip p7zip"
 BOLD='\033[1m'       #  ${BOLD}
 LGREEN='\033[1;32m'     #  ${LGREEN}
@@ -45,6 +46,9 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     echo "==============================================="
     apt-get update
     apt-get install -y $DEB_PACKAGE_NAME
+    wget $DEB_MEGA_CMD
+    dpkg -i $DEB_MEGA_CMD
+    apt --fix-broken install
     OS="Ubuntu"
  elif cat /etc/*release | grep ^NAME | grep Debian ; then
     echo "==============================================="
