@@ -27,6 +27,7 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     echo "==============================================="
     echo "Installing packages $YUM_PACKAGE_NAME on CentOS"
     echo "==============================================="
+    yum install -y epel-release
     yum install -y $YUM_PACKAGE_NAME
     wget https://mega.nz/linux/MEGAsync//CentOS_7/x86_64/$RPM_MEGA_CMD --no-check-certificate
     yum --nogpgcheck localinstall $RPM_MEGA_CMD -y
