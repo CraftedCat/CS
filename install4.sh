@@ -15,6 +15,7 @@ export PROJECT="cs"
 DEB_PACKAGE_NAME="wget unzip software-properties-common p7zip-full"
 DEB_MEGA_CMD="megacmd_1.4.0-6.1_amd64.deb"
 YUM_PACKAGE_NAME="wget unzip p7zip"
+RPM_MEGA_CMD="megacmd-1.4.0-5.1.x86_64.rpm"
 BOLD='\033[1m'       #  ${BOLD}
 LGREEN='\033[1;32m'     #  ${LGREEN}
 LBLUE='\033[1;34m'     #  ${LBLUE}
@@ -27,6 +28,8 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     echo "Installing packages $YUM_PACKAGE_NAME on CentOS"
     echo "==============================================="
     yum install -y $YUM_PACKAGE_NAME
+    wget https://mega.nz/linux/MEGAsync//CentOS_7/x86_64/$RPM_MEGA_CMD --no-check-certificate
+    yum --nogpgcheck localinstall $RPM_MEGA_CMD -y
     OS="CentOS"
  elif cat /etc/*release | grep ^NAME | grep Red; then
     echo "==============================================="
