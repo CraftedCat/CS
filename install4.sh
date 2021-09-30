@@ -162,12 +162,12 @@ iptables -I INPUT -j ACCEPT -p tcp -m tcp --dport 50050
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
-echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке https://mega.nz/#!8mYR3ABa!8u6-QpJxARxOKVvwhHnepUYnaVGV8mt3UHjVcMpounU\n"
+echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке https://mega.nz/file/EdMgHbzR#7qdGDgNsHrOg_3R-WFK3k_KIwH2_Femc2TdDvYDxwsM\n"
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и запустите строку: ./cobaltstrike\n"
-echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n\n"  
-echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте, установите Java (jre-*) и запустите cobaltstrike.bat файл\n"
-echo -en "https://mega.nz/file/MF9kUCwI#5HsjvzMQ_T1l_rkSPkUYMQyUla7yRc01pj1TQqRR2Bg\n"
-echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
+echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}44728${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n\n"  
+echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте клиент по ссылке, установите Java (jre-*) из архива, и запустите cobaltstrike.bat файл\n"
+echo -en "https://mega.nz/file/BVNiQb6D#tD2Hc6z2WyiJnzItieNtBXdkysqiWZfz1evaqekb6wk\n"
+echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}44728${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
 
 # Erase project files
 rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
