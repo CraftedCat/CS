@@ -166,7 +166,7 @@ echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и запустите строку: ./cobaltstrike\n"
 echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n\n"  
 echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте, установите Java (jre-*) и запустите cobaltstrike.bat файл\n"
-echo -en "https://mega.nz/#!xnRlhagL!PqzVMj7vYPR_naoFHzs6EaPVoJ0aEKPB54XmkJy660o\n"
+echo -en "https://mega.nz/file/MF9kUCwI#5HsjvzMQ_T1l_rkSPkUYMQyUla7yRc01pj1TQqRR2Bg\n"
 echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}50050${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
 
 # Erase project files
