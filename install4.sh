@@ -156,7 +156,7 @@ systemctl enable $PROJECT
 systemctl restart $PROJECT
 
 #Add firewall rule
-iptables -I INPUT -j ACCEPT -p tcp -m tcp --dport 50050
+iptables -I INPUT -j ACCEPT -p tcp -m tcp --dport 44728
 
 # Clear
 echo -e  "===================================\n"
