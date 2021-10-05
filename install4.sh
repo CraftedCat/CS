@@ -96,7 +96,8 @@ mega-get https://mega.nz/file/wAM1yIyB#nrbQcFkV4pjXhK1laqT_3B8hAMOTo8Hpj3yaARqb6
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
     7za x -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
-    rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
+    # rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
+    yum install java-11-openjdk-devel -y
 elif [[ "${OS}" == "Ubuntu" ]]; then
     7z x -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
     #mkdir /usr/lib/jvm &>/dev/null
@@ -166,11 +167,11 @@ iptables -I INPUT -j ACCEPT -p tcp -m tcp --dport 41337
 echo -e  "===================================\n"
 echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
-echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке https://mega.nz/file/EdMgHbzR#7qdGDgNsHrOg_3R-WFK3k_KIwH2_Femc2TdDvYDxwsM\n"
+echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке https://mega.nz/file/YZEHTCbC#_uDO3M1-69D3Q-oj2S8nyBtSoO1vjxRDfjXjDxL0Iug\n"
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и запустите строку: ./cobaltstrike\n"
 echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}41337${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n\n"  
 echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте клиент по ссылке, установите Java (jre-*) из архива, и запустите cobaltstrike.bat файл\n"
-echo -en "https://mega.nz/file/BVNiQb6D#tD2Hc6z2WyiJnzItieNtBXdkysqiWZfz1evaqekb6wk\n"
+echo -en "https://mega.nz/file/EEU3WYzL#1pzZhnh3NSKwIa520kDokIUD47EApUYJYpIGSA9nCTI\n"
 echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}41337${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
 
 # Erase project files
