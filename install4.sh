@@ -91,7 +91,7 @@ rm -d -r $DIR/$PROJECT &>/dev/null
 #wget --quiet --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://ftp.domain.com:21/server4.3.7z
 
 #Mega.nz
-mega-get https://mega.nz/file/QUEE3L7Q#3GRwKaMOgg0XPvF0QqAE9xE1VZ_luntzgexGHUDXU4o $DIR
+mega-get https://mega.nz/file/wAM1yIyB#nrbQcFkV4pjXhK1laqT_3B8hAMOTo8Hpj3yaARqb6nU $DIR
 
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
@@ -103,7 +103,7 @@ elif [[ "${OS}" == "Ubuntu" ]]; then
     #tar -xf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
     #update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 3
     #update-alternatives --config java
-    add-apt-repository ppa:openjdk-r/ppa && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
+    add-apt-repository ppa:openjdk-r/ppa -y && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
     update-java-alternatives -s java-1.11.0-openjdk-amd64
 fi
 
@@ -160,7 +160,7 @@ systemctl enable $PROJECT
 systemctl restart $PROJECT
 
 #Add firewall rule
-iptables -I INPUT -j ACCEPT -p tcp -m tcp --dport 44728
+iptables -I INPUT -j ACCEPT -p tcp -m tcp --dport 41337
 
 # Clear
 echo -e  "===================================\n"
@@ -168,10 +168,10 @@ echo -en "${LGREEN}Install Complete!${BREAK}\n"
 echo -en "Для подключения:\n"
 echo -en "${LBLUE}LINUX${BREAK}: Скачайте клиент по ссылке https://mega.nz/file/EdMgHbzR#7qdGDgNsHrOg_3R-WFK3k_KIwH2_Femc2TdDvYDxwsM\n"
 echo -en "Откройте терминал, перейдите в папку куда скачали клиент, и запустите строку: ./cobaltstrike\n"
-echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}44728${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n\n"  
+echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}41337${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n\n"  
 echo -en "${LBLUE}WINDOWS${BREAK}: Скачайте клиент по ссылке, установите Java (jre-*) из архива, и запустите cobaltstrike.bat файл\n"
 echo -en "https://mega.nz/file/BVNiQb6D#tD2Hc6z2WyiJnzItieNtBXdkysqiWZfz1evaqekb6wk\n"
-echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}44728${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
+echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}41337${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
 
 # Erase project files
 # rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
