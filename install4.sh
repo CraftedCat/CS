@@ -99,12 +99,12 @@ if [[ "${OS}" == "CentOS" ]]; then
     rpm -i $DIR/$PROJECT/jre-8u121-linux-x64.rpm
 elif [[ "${OS}" == "Ubuntu" ]]; then
     7z x -p$UNIQ $DIR/server4.3.7z -o$DIR/$PROJECT
-    mkdir /usr/lib/jvm &>/dev/null
-    tar -xf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
-    update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 3
-    update-alternatives --config java
-    # add-apt-repository ppa:openjdk-r/ppa && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
-    # update-java-alternatives -s java-1.11.0-openjdk-amd64
+    #mkdir /usr/lib/jvm &>/dev/null
+    #tar -xf $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz -C /usr/lib/jvm/
+    #update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 3
+    #update-alternatives --config java
+    add-apt-repository ppa:openjdk-r/ppa && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
+    update-java-alternatives -s java-1.11.0-openjdk-amd64
 fi
 
 chmod +x $DIR/$PROJECT/teamserver && chmod +x $DIR/$PROJECT/teamserver_ubuntu
@@ -174,8 +174,8 @@ echo -en "https://mega.nz/file/BVNiQb6D#tD2Hc6z2WyiJnzItieNtBXdkysqiWZfz1evaqekb
 echo -en "В появившемся окне клиента укажите Host: ${BOLD}$IP${BREAK}, Port: ${BOLD}44728${BREAK}, User: ${BOLD}ВАШ_НИК${BREAK} и Pasword: ${BOLD}$PASSWD${BREAK}\n" 
 
 # Erase project files
-rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
-rm -f $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz
+# rm -f $DIR/$PROJECT/jre-8u121-linux-x64.rpm
+# rm -f $DIR/$PROJECT/jdk-8u121-linux-x64.tar.gz
 rm -f $DIR/server4.3.7z
 rm -f $DEB_MEGA_CMD
 
