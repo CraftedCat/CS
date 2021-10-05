@@ -91,7 +91,7 @@ rm -d -r $DIR/$PROJECT &>/dev/null
 #wget --quiet --no-check-certificate --directory-prefix=$DIR/ --no-cache --ftp-user=$PROJECT --ftp-password=$UNIQ ftp://ftp.domain.com:21/server4.3.7z
 
 #Mega.nz
-mega-get https://mega.nz/file/oYk0BKbC#D2u_xYhDXcEkH3edoGnqEn39U4Ff_16KKfJnOLpcPLQ $DIR
+mega-get https://mega.nz/file/QUEE3L7Q#3GRwKaMOgg0XPvF0QqAE9xE1VZ_luntzgexGHUDXU4o $DIR
 
 # unzip -P $UNIQ $DIR/server4.zip -d $DIR/$PROJECT
 if [[ "${OS}" == "CentOS" ]]; then
